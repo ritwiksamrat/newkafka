@@ -1,0 +1,15 @@
+syntax="proto3";
+
+package proto;
+
+message Request{
+    string username=1;
+}
+
+message Response{
+    string result=1;
+}
+
+service ProducerService{
+    rpc Producer(Request) returns (Response);
+}
