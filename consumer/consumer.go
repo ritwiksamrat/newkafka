@@ -11,10 +11,10 @@ import (
 )
 
 const (  
-    username = "newuser"
-    password = "password"
+    username = "root"
+    password = "root12345"
     hostname = "127.0.0.1:3306"
-    dbname   = "kafka"
+    dbname   = "info"
 )
 
 func main() {
@@ -100,7 +100,7 @@ func dbConnection() (*sql.DB, error) {
 
 func insertMemberTable(db *sql.DB, user_name string) error{
    
-    stmt, err := db.Prepare("INSERT INTO members (username) values (?);")
+    stmt, err := db.Prepare("INSERT INTO infouser (username) values (?);")
 	if err != nil {
 		fmt.Print(err.Error())
 	}
