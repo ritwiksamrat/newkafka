@@ -81,8 +81,7 @@ func dbConnection() (*sql.DB, error) {
         log.Printf("Error %s when opening DB", err)
         return nil, err
     }
-    //defer db.Close()
-
+    
     db.SetMaxOpenConns(20)
     db.SetMaxIdleConns(20)
     db.SetConnMaxLifetime(time.Minute * 5)
